@@ -1,0 +1,22 @@
+package com.app.threetier.domain.dto;
+
+import lombok.*;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode(of = "id")
+public class PostDTO {
+
+    private Long id;
+    private String postTitle;
+    private String postContent;
+    private Long postReadCount;
+    private Long MemberId;
+    private String memberName;
+    private String memberEmail;
+
+
+
+}
