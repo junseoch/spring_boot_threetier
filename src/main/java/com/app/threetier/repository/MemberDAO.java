@@ -18,6 +18,7 @@ public class MemberDAO {
         return memberMapper.existMemberEmail(memberEmail);
     }
 
+    // 데이터를 DB에 저장(save)
     // 회원 가입
     public void save(MemberVO memberVO) {
         memberMapper.insert(memberVO);

@@ -59,24 +59,23 @@ public class MemberServiceImpl implements MemberService {
     public MemberResponseDTO modify(MemberVO memberVO) {
         memberVO.setMemberPassword(passwordEncoder.encode(memberVO.getMemberPassword()));
         memberDAO.updateByMember(memberVO);
-        MemberVO foundMember =  memberDAO.findMemberById(memberVO.getId())
+        MemberVO foundMember = memberDAO.findMemberById(memberVO.getId())
                 .orElseThrow(() -> new MemberException("유저를 찾을 수 없습니다"));
 
         return new MemberResponseDTO(foundMember);
     }
 
     // 회원 탈퇴
+    // 모든 서비스들의 해당 유저 정보를 삭제 후
+    // 멤버 테이블에서 멤버를 삭제(소프트 델리트)
     @Override
-    public boolean withDraw(Long id) {
-        // 모든 서비스들의 해당 유저 정보를 삭제 후
-        // 멤버 테이블에서 멤버를 삭제(소프트 delete)
-
-        boolean idWithdraw = false;
+    public boolean withdraw(Long id) {
+        boolean isWithdraw = false;
         try {
             memberDAO.deleteById(id);
             return true;
         } catch (Exception e) {
-           return false;
+            return false;
         }
     }
 

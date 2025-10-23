@@ -48,7 +48,7 @@ public class MemberServiceTests {
 
     @Test
     public void withdrawTest(){
-        if(memberService.withDraw(49L)) {
+        if(memberService.withdraw(49L)) {
             log.info("withdraw success");
         } else {
             log.info("withdraw failure");

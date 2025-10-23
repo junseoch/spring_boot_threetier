@@ -13,10 +13,8 @@ public class PostDTO {
     private String postTitle;
     private String postContent;
     private Long postReadCount;
-    private Long MemberId;
+    private Long memberId;
     private String memberName;
     private String memberEmail;
-
-
 
 }

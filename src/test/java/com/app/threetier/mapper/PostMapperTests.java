@@ -1,5 +1,6 @@
 package com.app.threetier.mapper;
 
+import com.app.threetier.domain.dto.PostDTO;
 import com.app.threetier.domain.vo.PostVO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -19,20 +20,37 @@ public class PostMapperTests {
     @Test
     public void insertTest(){
         PostVO postVO = new PostVO();
-        postVO.setId(2L);
-        postVO.setPostTitle("게시글 제목 테스트1");
-        postVO.setPostContent("게시글 내용 테스트1");
+        postVO.setId(3L);
+        postVO.setPostTitle("제목입니다!");
+        postVO.setPostContent("내용입니다!");
         postVO.setMemberId(3L);
+        postMapper.insert(postVO);
     }
 
     @Test
     public void selectAllTest(){
-        List<PostVO> posts = postMapper.selectAll();
+        PostDTO postDTO = new PostDTO();
+        List<PostDTO> posts = postMapper.selectAll();
+        log.info("{}",posts);
     }
 
     @Test
     public void selectTest(){
-        postMapper.select(1L);
+        log.info("{}", postMapper.select(1L));
+    }
+
+    @Test
+    public void updateTest(){
+        PostVO postVO = new PostVO();
+        postVO.setId(1L);
+        postVO.setPostTitle("테스트 제목 수정수정");
+        postVO.setPostContent("테스트 내용 수정수정");
+        postMapper.update(postVO);
+    }
+
+    @Test
+    public void deleteTest(){
+        postMapper.delete(1L);
     }
 
 }

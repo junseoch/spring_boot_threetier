@@ -4,6 +4,7 @@ import com.app.threetier.domain.dto.MemberResponseDTO;
 import com.app.threetier.domain.vo.MemberVO;
 
 public interface MemberService {
+
     // 이름: 서비스의 직관적인 이름
 
     // 이메일 중복 확인
@@ -19,6 +20,11 @@ public interface MemberService {
     public MemberResponseDTO modify(MemberVO memberVO);
 
     // 회원 탈퇴
-    public boolean withDraw(Long id);
+    public boolean withdraw(Long id);
 
 }
+
+
+
+
+
