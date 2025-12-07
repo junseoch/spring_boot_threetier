@@ -1,6 +1,6 @@
 package com.app.threetier.mapper;
 
-import com.app.threetier.domain.dto.PostDTO;
+import com.app.threetier.domain.dto.PostResponseDTO;
 import com.app.threetier.domain.vo.PostVO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-import java.util.Optional;
 
 @SpringBootTest
 @Slf4j
@@ -29,8 +28,8 @@ public class PostMapperTests {
 
     @Test
     public void selectAllTest(){
-        PostDTO postDTO = new PostDTO();
-        List<PostDTO> posts = postMapper.selectAll();
+        PostResponseDTO postDTO = new PostResponseDTO();
+        List<PostResponseDTO> posts = postMapper.selectAll();
         log.info("{}",posts);
     }
 

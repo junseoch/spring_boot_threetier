@@ -41,8 +41,8 @@ public class MemberAPI {
 
     @Operation(summary = "로그인", description = "로그인을 할 수 있는 API")
 //    @ApiResponse({
-//            @ApiResponse(responseCode = "200", description = "로그인 성공"),
-//            @ApiResponse(responseCode = "400", description = "인증 실패")
+//            @ApiResponse(responseCode = "201", description = "로그인 성공"),
+//            @ApiResponse(responseCode = "401", description = "인증 실패")
 //    })
     @PostMapping("login")
     public ResponseEntity<ApiResponseDTO> login(@RequestBody MemberVO memberVO){
@@ -60,7 +60,7 @@ public class MemberAPI {
     }
 
     @Operation(summary = "회원 탈퇴", description = "회원의 정보를 수정할 수 있는 API")
-    @ApiResponse(responseCode = "409", description = "회원 탈퇴 성공")
+    @ApiResponse(responseCode = "204", description = "회원 탈퇴 성공")
     @DeleteMapping("withdraw")
     public boolean withdraw(@RequestBody Long id){
         return memberService.withdraw(id);

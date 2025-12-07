@@ -8,7 +8,7 @@
     <typeAliases>
         <typeAlias type="com.app.threetier.domain.vo.MemberVO" alias="MemberVO"/>
         <typeAlias type="com.app.threetier.domain.vo.PostVO" alias="PostVO"/>
-        <typeAlias type="com.app.threetier.domain.dto.PostDTO" alias="PostDTO"/>
+        <typeAlias type="com.app.threetier.domain.dto.PostResponseDTO" alias="PostDTO"/>
     </typeAliases>
 
 </configuration>

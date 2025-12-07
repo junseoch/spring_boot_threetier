@@ -23,6 +23,7 @@ public class MemberServiceImpl implements MemberService {
     private final MemberDAO memberDAO;
     private final PasswordEncoder passwordEncoder;
 
+    // 이메일 중복 확인
     @Override
     public boolean existMemberEmail(String memberEmail) {
         return memberDAO.existMemberEmail(memberEmail);

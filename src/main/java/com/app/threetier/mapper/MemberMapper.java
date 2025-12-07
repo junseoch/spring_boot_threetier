@@ -14,11 +14,12 @@ public interface MemberMapper {
     // 회원 가입
     public void insert(MemberVO memberVO);
 
+    // 이메일로 Id 조회
+    public Long selectIdByMemberEmail(String memberEmail);
+
     // 회원 조회
     public Optional<MemberVO> select(Long id);
 
-    // 이메일로 Id 조회
-    public Long selectIdByMemberEmail(String memberEmail);
 
     // 회원 정보 수정
     public void update(MemberVO memberVO);

@@ -24,15 +24,16 @@ public class MemberDAO {
         memberMapper.insert(memberVO);
     }
 
+    // 이메일로 아이디 조회
+    public Long findIdByMemberEmail(String memberEmail){
+        return memberMapper.selectIdByMemberEmail(memberEmail);
+    }
+
     // 아이디로 회원 조회
     public Optional<MemberVO> findMemberById(Long id) {
         return memberMapper.select(id);
     };
 
-    // 이메일로 아이디 조회
-    public Long findIdByMemberEmail(String memberEmail){
-        return memberMapper.selectIdByMemberEmail(memberEmail);
-    }
 
     // 회원 정보 수정
     public void updateByMember(MemberVO memberVO) {
